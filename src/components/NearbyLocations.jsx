@@ -1,9 +1,9 @@
 import { Filter, History } from 'lucide-react'
-import React from 'react'
+import React, {useState} from 'react'
 import { MOCK_LOCATIONS } from '../constants'
 import LocationCard from './LocationCard'
 
-const NearbyLocations = () => {
+const NearbyLocations = ({onSelectLocation}) => {
   return (
     <>
         <div className='flex items-center justify-between '>
@@ -22,7 +22,7 @@ const NearbyLocations = () => {
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
             {MOCK_LOCATIONS.map((location)=>(
-                <LocationCard key={location.id} location={location}/>
+                <LocationCard key={location.id} location={location} onClick={onSelectLocation}/>
             ))}
         </div>
     </>  
